@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  
+  <meta name="keywords" content="网站关键字">
+  <meta name="description" content="网站简介">
+  
+  <title>David Blog</title>
+  
+    <!-- stylesheets list from config.yml -->
+    
+      <link rel="stylesheet" href="/css/materialize.min.css">
+    
+      <link rel="stylesheet" href="/css/main.min.css">
+    
+  
+  <style type="text/css">
+      html{
+          font-family: sans-serif;
+          font-weight: 300;
+      }
+      @font-face {
+          font-family: 'Material Icons';
+          font-style: normal;
+          font-weight: 400;
+          src: url(/fonts/MaterialIcons-Regular.eot);
+          src: url(/fonts/MaterialIcons-Regular.woff2) format('woff2'),
+          url(/fonts/MaterialIcons-Regular.woff) format('woff'),
+          url(/fonts/MaterialIcons-Regular.ttf) format('truetype')
+      }
+  </style>
+</head>
+<body>
+<div id="menu-box"><a href="javascript:void(0)" id="menu" data-activates="slide-out" class="button-collapse menu" ><span class="nav-btn"></span></a></div>
+<div id="menu-outer">
+  <div id="menu-inner">
+      <ul id="slide-out" class="side-nav" >
+    <div class="nav-header"  style="background-image: url(/images/header-bg.png);background-color:#26A69A">
+    <div class="header-box"><img src="/images/header.png" ondragstart="return false;"></div>
+    <p>陈百川</p>
+    <div class="nav-link">
+        
+        <a href="https://twitter.com/DavidDivading" target="_blank"> <div class="link-box twitter"></div></a>
+        
+        
+        <a  href="http://github.com/cbcing" target="_blank"><div class="link-box github"></div></a>
+        
+        
+        <a href="mailto:davvvvvvidchen@gmail.com"><div class="link-box email"></div></a>
+        
+        
+        <a href="https://weibo.com/3543577592/profile" target="_blank"><div class="link-box weibo"></div></a>
+        
+        
+        <a href="http://example.com" target="_blank"> <div class="link-box zhihu"></div></a>
+        
+    </div>
+    <div class="nav-search">
+        <form id="search-form"> <!-- 搜索框相关 -->
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="搜索..." class="search form-control" autocomplete="off" autocorrect="off"/>
+            <div class="nav-search-img"><i class="material-icons">search</i></div>
+        </form>
+        <div id="local-search-result"></div> <!-- 搜索结果区 -->
+        <p class='no-result'>无搜索结果</p>
+    </div>
+</div>
+    <!--Homepage-->
+
+<li class="nav-list">
+    <a href="/" target="_self">
+        <div class="nav-ico"><i class="material-icons">home</i> </div><p>主页</p>
+    </a>
+</li>
+
+<!--archives-->
+
+<li class="nav-list dropdown-btn">
+    <a  class=""  target="_self">
+        <div class="nav-ico"><i class="material-icons">assignment</i></div><p>归档</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
+    </a>
+</li>
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="archive-link" href="/archives/2017/09/">九月 2017<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/08/">八月 2017<span class="archive-count">1</span></a>
+    </li>
+</ul>
+<!--categories-->
+
+<li class="nav-list dropdown-btn">
+    <a   class=""  target="_self">
+        <div class="nav-ico"><i class="material-icons">dashboard</i></div><p>分类</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
+    </a>
+</li>
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="category-link" href="/categories/比心/">比心<span class="category-count">1</span></a>
+    </li>
+</ul>
+<!--tags-->
+
+<li class="nav-list">
+    <a href="/archives" target="_self">
+        <div class="nav-ico"><i class="material-icons">bookmark</i> </div><p>标签</p>
+    </a>
+</li>
+
+<!--photo-->
+
+<li class="nav-list">
+    <a href="/photo" class="nopjax" target="_self">
+        <div class="nav-ico"><i class="material-icons">insert_photo</i> </div><p>影集</p>
+    </a>
+</li>
+
+<!--friends-->
+
+<li class="nav-list">
+    <a href="/friends" target="_self">
+        <div class="nav-ico"><i class="material-icons">face</i> </div><p>友链</p>
+    </a>
+</li>
+
+<!--about-->
+
+<li class="nav-list">
+    <a href="/about" target="_self">
+        <div class="nav-ico"><i class="material-icons">copyright</i> </div><p>关于</p>
+    </a>
+</li>
+
+
+</ul>
+
+  </div>
+</div>
+
+<div id="content-outer">
+  <div id="content-inner">
+    
+<article id="post">
+  <div class="post-page-title" style="background-color:#26A69A;background-image:url(/images/cbc/two.png)" >
+  <h2>从安全的角度考虑Session</h2>
+    
+  <p>作者:陈百川 &nbsp&nbsp 发布于:<time datetime="2017-09-09T00:35:20.000Z">
+          2017-09-09
+    </time>
+  </p>
+    
+  </div>
+  <div class="post-page-content">
+  <p>本文翻译自<a href="https://www.owasp.org/index.php/Session_Management_Cheat_Sheet#Session_ID_Properties" target="_blank" rel="external">https://www.owasp.org/index.php/Session_Management_Cheat_Sheet#Session_ID_Properties</a></p>
+<p>翻译有很多不足的地方，仅供参考哦。</p>
+<h3 id="web认证、session管理和访问控制"><a href="#web认证、session管理和访问控制" class="headerlink" title="web认证、session管理和访问控制"></a>web认证、session管理和访问控制</h3><p>• web session(会话)是与同一用户相关联的一系列http请求和响应事务，现代的大型的复杂的web应用需要在一段时间里面保留了每个用户的相关信息和状态。因此，session就为我们提供了这样一个能力去创建一个变量，例如访问权限和本地化设置，这将是用于用户在会话期间与web应用程序的每一次交互。</p>
+<p>• web应用程序能够在用户的第一次请求的时候创建session以便跟踪用户之后的每一次请求。一个很好的例子就是用户语言的偏好设置。此外，一旦用户进行身份验证，web应用程序就能够使用会话了，这确保了在后续的一系列的请求中可以识别用户一起能够使用安全的访问控制、授权访问用户的私有数据从而增加应用的可用性。因此，现在的web应用程序都应该在用户认证前后提供session的管理。</p>
+<p>• 一旦一个session被认证之后，session id就会临时被web应用程序等同于最强有力的认证方式，例如用户名和密码，一次性密码(OTP)，基于客户端的数字证书，智能卡或生物特征（如指纹或视网膜）等等。</p>
+<ul>
+<li>http是一个无状态的协议(RFC2616)，每一次的请求和响应都独立与其他的web交互。因此，为了引入session的概念，需要实现会话管理的功能： </li>
+</ul>
+<ul>
+<li>session id或者token通过web应用程序绑定用户凭证（以用户session的形式）到用户http的请求与响应和适当的访问控制。在当今的web应用程中，这三个复杂的组件（authentication, session management, and access control）加上web开发者对他们的实现以及约束（因为web开发框架在这些组件中没有提供严格的关系），这是的安全会话管理模块的实现非常具有挑战性。</li>
+<li>session id的捕获、预测等都会导致session攻击（session被劫持），攻击者可以完全能够模拟web应用程序中的用户（受害者）。攻击者可以执行两种类型的会话劫持攻击：针对攻击或通用攻击，针对指的是攻击者模拟的是web应用程序的制定用户，而通用攻击指的是模拟web应用程序中合法的或有效的用户。</li>
+</ul>
+<h3 id="Session-id-属性"><a href="#Session-id-属性" class="headerlink" title="Session id 属性"></a>Session id 属性</h3><p>为了保持认证的状态和跟踪用户的在web应用程序里的进度，web应用程序会在session（会话）提供给用户一个session（会话）标识（id或者token），这个session标识（id或token）会在用户和web应用程序整个的会话期间进行共享和交换。The seesion id is a “name = value” pair。为了实现安全的session id，通常session id需要满足以下几个条件：</p>
+<h4 id="Session-ID-Name-Fingerprinting"><a href="#Session-ID-Name-Fingerprinting" class="headerlink" title="Session ID Name Fingerprinting"></a>Session ID Name Fingerprinting</h4><p>session id的名称不应该具有任何的描述性，也就是说，它是没有什么意思的，仅仅是一串字符串，不会提供任何关于session id的目的和含义的不必要的细节。</p>
+<p>大多数开发框架的session id name都很容易被识别，比如说PHPSESSID (PHP), JSESSIONID (J2EE), CFID &amp; CFTOKEN (ColdFusion), ASP.NET_SessionId (ASP .NET)等等，因此，这样的session id name很容易透露出来web应用程序所使用的开发框架以及开发语言。</p>
+<p>建议是将web开发框架默认的session id name改普通的名字。</p>
+<h4 id="Session-ID-Length"><a href="#Session-ID-Length" class="headerlink" title="Session ID Length"></a>Session ID Length</h4><p>session id必须足够长以防止暴力攻击，暴力攻击指的就是穷举（挨着挨着试，万一成功了呢）。所以session id的长度应该至少128bit(16bytes)。*</p>
+<h4 id="Session-ID-Entropy"><a href="#Session-ID-Entropy" class="headerlink" title="Session ID Entropy"></a>Session ID Entropy</h4><p>session id必须是不可预测的（足够随机）以防止猜测攻击，攻击者可以通过数据分析技术来猜测活着预测有效的session id。</p>
+<p>The session ID value must provide at least 64 bits of entropy (if a good PRNG is used, this value is estimated to be half the length of the session id).</p>
+<h4 id="Session-ID-Content-or-value"><a href="#Session-ID-Content-or-value" class="headerlink" title="Session ID Content(or value)"></a>Session ID Content(or value)</h4><p>session id内容(或 值)必须对于防止信息泄漏攻击是毫无意义的，信息泄漏攻击指的就是攻击者通过解码id的内容并从中提取用户的信息，session或者web应用程序的内部运作的一些信息。</p>
+<p>session id必须支持简单的客户端标识，他的值不能包含任何敏感的信息(or PII)。与会话id相关联的业务或者应用程序的逻辑或者数据都必须存储在服务器端，特别是存储在会话对象或者会话管理数据库。中。存储的信息包括：the client IP address, User-Agent, e-mail, username, user ID, role, privilege level, access rights, language preferences, account ID, current state, last login, session timeouts, and other internal session details. 注意：如果session对象中包括重要信息（如：信用卡卡号等），则需要对会话管理信息库进行足够的加密和保护。</p>
+<p>建议通过使用诸如<a href="http://www.sha1-online.com/" target="_blank" rel="external">SHA1(160bit)</a>等加密散列(hash)函数来创建安全性较强的session id。</p>
+<h3 id="会话管理的实现"><a href="#会话管理的实现" class="headerlink" title="会话管理的实现"></a>会话管理的实现</h3><ul>
+<li>session management implementation定义了讲用户和web应用程序之间使用的交换机制，一边共享和连续交换sessoin id。HTTP中可以使用多种机制来维护Web应用程序中的会话状态，例如Cookie（标准HTTP头），URL参数（URL重写 - RFC 2396），GET请求的URL参数，POST请求上的主体参数，如隐藏表单字段（HTML表单）或专有HTTP标头。最好的session id交换机制</li>
+</ul>
+<p>应该允许定义高级的token属性，比方说token的到期时间等，这就是为什么使用cookie作为session id交换的原因之一了，其他的session id交换方法无法提供高级功能，还有一点就是如果将session id追加到url后面，这样会容易泄漏session id。</p>
+<h4 id="内置session管理实现"><a href="#内置session管理实现" class="headerlink" title="内置session管理实现"></a>内置session管理实现</h4><p>一些开发框架，比方说j2ee/asp/.net/php等等，都会提供他们自己的session管理机制和特点以及相关的实现。建议最好使用这些框架的session管理机制，而不是自己去构建一个session管理机制，因为这些框架在全球多个web环境中使用，并且经过web应用程序安全和开发社区的测试。但是，需要注意的指最好使用这些框架的最新的版本，因为他们修复了以前的一些漏洞。</p>
+<p>session管理机制用于保存临时session id的存储功能或者说是存储仓库必须是安全，要保护session id免受本地或者远程的意外泄漏或未经授权的访问。</p>
+<h4 id="使用与接受-session-id交换机制"><a href="#使用与接受-session-id交换机制" class="headerlink" title="使用与接受 session id交换机制"></a>使用与接受 session id交换机制</h4><p>Web应用程序应使用Cookie进行session id交换管理。如果用户通过不同的交换机制（如URL参数）提交session id，Web应用程序应避免将其接受作为防止会话固定的防御策略的一部分。</p>
+<h5 id="传输层安全"><a href="#传输层安全" class="headerlink" title="传输层安全"></a>传输层安全</h5><p>为了保护session ID交换免受网络流量中的主动窃听和被动泄露，必须为整个Web会话使用加密的HTTPS(SSL/TLS)连接，不仅用于交换用户凭据的身份验证过程。此外，必须使用“安全”cookie属性（见下文），以确保session id仅通过加密通道进行交换。加密通信信道的使用还保护会话免受某些会话固定攻击，攻击者能够拦截和操纵网络流量，以在受害者Web浏览器上注入（或修复）session id。</p>
+<p>以下HTTPS（SSL /TLS）最佳做法集中在保护session id（特别是使用Cookie时），并帮助在Web应用程序中集成HTTPS：</p>
+<ul>
+<li>Web应用程序不应该从HTTP切换给定session 到HTTPS，反之亦然，因为这将通过网络公开的明确的sessoin id。</li>
+<li>Web应用程序不应该混在同一主机上加密和未加密的内容（HTML页面，图像，CSS，JavaScript文件等），（甚至domain - 见“domain”的cookie属性），因为任何Web对象通过未加密的请求通道可能会透露的session id。</li>
+<li>Web应用程序，一般来说，不应该从同一台主机提供公共加密内容和私有加密内容。建议代替使用两个不同的宿主，如www.example.com通过HTTP（未加密）的公共内容，和secure.example.com通过HTTPS（加密）用于专用和敏感的内容（其中，session存在）。前者主机只有端口TCP / 80开放，而后者只有端口TCP / 443开放。</li>
+<li>Web应用程序应避免极其普通HTTP到主页（使用30X HTTP响应）上HTTPS重定向，因为这单未受保护的HTTP请求/响应交换可以被攻击者用来收集（或修复）一个有效的会话ID。</li>
+<li>Web应用程序应利用“HTTP严格传输安全（HSTS）”（以前称为STS）执行HTTPS连接。</li>
+</ul>
+<p>重要的是要强调，SSL / TLS（HTTPS）不会防止session id预测，暴力，客户端篡改或固定。然而，即使在今天，会话ID披露和从网络流量的捕获是最流行的攻击方式之一。</p>
+<h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><p>基于cookie的session id交换机制以cookie属性的形式提供多种安全功能，可用于保护session id的交换。</p>
+<h4 id="Secure-Attribute-安全属性"><a href="#Secure-Attribute-安全属性" class="headerlink" title="Secure Attribute(安全属性)"></a>Secure Attribute(安全属性)</h4><p>“安全”cookie属性指示Web浏览器只通过加密的<a href="http://www.mahaixiang.cn/internet/1522.html" target="_blank" rel="external">HTTPS（SSL / TLS）</a>连接发送cookie。这个session保护机制是强制性的，以防止通过MitM（中间人）攻击披露session id，它确保攻击者不能简单地从Web浏览器流量捕获session ID。</p>
+<p>强制Web应用程序仅使用HTTPS进行通信（即使端口TCP/80，HTTP，在Web应用程序主机中关闭）时，如果没有设置“安全”cookie，则不会防止session ID的泄露，Web浏览器会被未加密的http连接欺骗而导致session id的泄漏。</p>
+<h4 id="HttpOnly-Attribute-HttpOnly-属性"><a href="#HttpOnly-Attribute-HttpOnly-属性" class="headerlink" title="HttpOnly Attribute(HttpOnly 属性)"></a>HttpOnly Attribute(HttpOnly 属性)</h4><p>“HttpOnly”cookie属性指示Web浏览器不允许脚本（例如JavaScript或VBscript）通过DOM document.cookie对象访问Cookie。此session id保护是强制性的，以防止通过XSS攻击窃取session id。</p>
+<h4 id="SameSite-Attribute-SameSite-属性"><a href="#SameSite-Attribute-SameSite-属性" class="headerlink" title="SameSite Attribute(SameSite 属性)"></a>SameSite Attribute(SameSite 属性)</h4><p>SameSite允许服务器定义一个cookie属性，从而使得浏览器无法通过跨站请求发送cookie。这样做的主要目的在于减轻跨原始信息泄露的风险，并针对跨站点请求伪造攻击提供一些保护。</p>
+<h4 id="Domain-and-Path-Attributes-域和路径-属性"><a href="#Domain-and-Path-Attributes-域和路径-属性" class="headerlink" title="Domain and Path Attributes(域和路径 属性)"></a>Domain and Path Attributes(域和路径 属性)</h4><p>“Domain”这个cookie属性是在高速Web浏览器只将cookie发送到指定的域和所有子域，如果属性未设置，默认情况下只会将cookie发送到源服务器。“Path”这个cookie属性实在告诉Web浏览器只将cookie发送到Web应用程序中指定的目录或子目录（或路径或资源），如果该属性没有设置，那么默认将cookie发送至资源请求路径或者设置cookie的路径。</p>
+<p>建议将两个属性都设置在一个小范围内。比如说不设置“Domain”属性，因为这样cookie就只会发送至源服务器；“Path”属性应该尽可能的限制在使用session id的path下。</p>
+<p>需要注意的是，如果你的“domain”属性的值设置的过于简单，例如：example.com，这样会允许攻击者对同一域的不同主机和web应用程序之间发起session id的攻击，这个不同主机和web应用程序之间的cookie称之为跨子域cookie。比如，www.example.com子域上的漏洞就会导致攻击者拿到可以去访问secure.example.com的session id。*  </p>
+<p>另外，建议不要将不同安全级别的web应用程序混合在同一个域上面。 Vulnerabilities in one of the web applications would allow an attacker to set the session ID for a different web application on the same domain by using a permissive “Domain” attribute (such as “example.com”) which is a technique that can be used in session fixation attacks 。</p>
+<p>虽然“Path”属性允许同一主机上的使用不同路径的不同的web应用隔离session id，但是最好的建议还是不要将不同的web应用部署在不同的主机上，尤其是安全级别不同的web应用。 Other methods can be used by these applications to access the session IDs, such as the “document.cookie” object. Also, any web application can set cookies for any path on that host.</p>
+<p>Cookie易受DNS欺骗/劫持/中毒攻击的攻击，攻击者可以在其中操纵DNS解析，强制Web浏览器透露给定主机或域的session ID。</p>
+<h4 id="到期和最大时间-属性"><a href="#到期和最大时间-属性" class="headerlink" title="到期和最大时间 属性"></a>到期和最大时间 属性</h4><p>基于cookie的session管理机制会使用两种类型的cookie：持久性cookie(non-persistent cookie)和非持久性cookie(persistent cookie)。如果一个cookie出现了“Max-Age”属性或者“Expires”属性(前者的优先级高于后者)，那么这个cookie就会被视作为持久性cookie，浏览器会将它存放在本地硬盘上，直到过期。但通常，在用户验证身份之后，都会使用非持久性cookie，如果当前的浏览器实例关闭，这就会强制会话(session )从客户端消失。所以最好的建议还是使用非持久性cookie，这样也是为了防止session id不会长时间的保存在浏览器的缓存上，从而使得攻击者可以从中获取它。</p>
+<p>最后，对于cookie的使用，有以下几点建议：</p>
+<ul>
+<li>Ensure that sensitive information is not comprised, by ensuring that sensitive information is not persistent / encrypting / stored on a need basis for the duration of the need</li>
+</ul>
+<p>​    确保不包含敏感信息，确保敏感信息在需要的持续时间内不需要持续/加密/存储</p>
+<ul>
+<li>Ensure that unauthorized activities cannot take place via cookie manipulation</li>
+</ul>
+<p>​    确保未经授权的活动不能通过Cookie操作进行</p>
+<ul>
+<li>Ensure secure flag is set to prevent accidental transmission over “the wire” in a non-secure manner</li>
+</ul>
+<p>​    确保设置了安全标志，以防止以非安全的方式意外传输“wire”</p>
+<ul>
+<li>Determine if all state transitions in the application code properly check for the cookies and enforce their use</li>
+</ul>
+<p>​    确定应用程序代码中的所有状态转换是否正确检查Cookie并强制使用它们</p>
+<ul>
+<li>Ensure entire cookie should be encrypted if sensitive data is persisted in the cookie</li>
+</ul>
+<p>​        如果敏感数据保留在cookie中，请确保完整的Cookie应被加密</p>
+<ul>
+<li>Define all cookies being used by the application, their name and why they are needed</li>
+</ul>
+<p>​        定义应用程序使用的所有Cookie，名称以及为什么需要它们</p>
+<p>​    </p>
+<h3 id="Session-Id-生命周期"><a href="#Session-Id-生命周期" class="headerlink" title="Session Id 生命周期"></a>Session Id 生命周期</h3><h4 id="Session-id-的生成和验证：permissive-and-strict-session-管理"><a href="#Session-id-的生成和验证：permissive-and-strict-session-管理" class="headerlink" title="Session id 的生成和验证：permissive and strict session 管理"></a>Session id 的生成和验证：permissive and strict session 管理</h4><p>对于web应用来说，有两种类型的session管理机制：permissive和strict。permissive机制允许web应用程序去接受用户设置的任何session id的值并且有效，然后为其创建session id。而strict机制机制则是强制以前的由web应用程序创建的session id。</p>
+<p>通常现在的使用的是strict机制，因为它更安全。开发者应该确保在某些情况不能是不用permissive机制，web应用程序应该绝不接受不是由它自己生成的session id，如果收到了，web应用程序应该重新生成一个新的有效的session id给用户。更需要注意的是，这种活动应该别视为可疑活动，要给予警报。</p>
+<h4 id="管理session-id作为其他用户的输入"><a href="#管理session-id作为其他用户的输入" class="headerlink" title="管理session id作为其他用户的输入"></a>管理session id作为其他用户的输入</h4><p>Session IDs must be considered untrusted, as any other user input processed by the web application, and they must be thoroughly validated and verified. Depending on the session management mechanism used, the session ID will be received in a GET or POST parameter, in the URL or in an HTTP header (e.g. cookies). If web applications do not validate and filter out invalid session ID values before processing them, they can potentially be used to exploit other web vulnerabilities, such as SQL injection if the session IDs are stored on a relational database, or persistent XSS if the session IDs are stored and reflected back afterwards by the web application.</p>
+<h4 id="在任何权限级别更改后，更新session-id"><a href="#在任何权限级别更改后，更新session-id" class="headerlink" title="在任何权限级别更改后，更新session id"></a>在任何权限级别更改后，更新session id</h4><h4 id="Considerations-When-Using-Multiple-Cookies-考虑使用多个cookies"><a href="#Considerations-When-Using-Multiple-Cookies-考虑使用多个cookies" class="headerlink" title="Considerations When Using Multiple Cookies(考虑使用多个cookies)"></a>Considerations When Using Multiple Cookies(考虑使用多个cookies)</h4><p>如果Web应用程序使用Cookie作为sessionid交换机制，并为给定的会话设置了多个cookie，则Web应用程序必须在允许访问用户会话之前验证所有的Cookie（并且实现它们之间的关系）。</p>
+<h3 id="会话到期"><a href="#会话到期" class="headerlink" title="会话到期"></a>会话到期</h3><p>为了最小化攻击者可以对活动会话启动攻击并劫持它们的时间段，必须为每个会话设置到期超时，建立会话将保持活动的时间量。Web应用程序的会话过期不足会增加其他基于会话的攻击的风险，因为攻击者能够重用有效的会话ID并劫持相关联的会话，因此它仍然是活动的。</p>
+<p>会话间隔越短，攻击者必须使用有效session id的时间越短。必须根据Web应用程序的目的和性质相应设置会话到期超时值，并平衡安全性和可用性，以便用户可以舒适地完成Web应用程序中的操作，而不会使其会话频繁地过期。空闲和绝对超时值都高度依赖于Web应用程序及其数据的关键程度。常见的空闲超时范围是高价值应用程序的2-5分钟，低风险应用程序的时间为15-30分钟。</p>
+<p>会话到期时，Web应用程序必须采取主动措施，使双方，客户端和服务器上的会话无效。后者是从安全角度来看最为相关和强制的。</p>
+<p>对于大多数会话交换机制，无效session id的客户端操作都基于清除token值。例如，为了使cookie无效，建议为session id提供一个空（或无效）的值，并将“过期”（或“最大年龄”）属性设置为过去的日期（如果是持久的正在使用cookie）：</p>
+<p>Set-Cookie: id=; Expires=Friday, 17-May-03 18:45:00 GMT </p>
+<p>为了关闭和使服务器端的session无效，Web应用程序必须通过使用会话管理机制提供的功能和方法，在会话过期或用户主动注销时采取主动操作，例如“HttpSession.invalidate()”(J2EE),“Session.Abandon()”(ASP .NET)或“session_destroy()/ unset()”(PHP)。</p>
+<h4 id="自动session过期"><a href="#自动session过期" class="headerlink" title="自动session过期"></a>自动session过期</h4><p>Idle timeout(空闲超时)</p>
+<p>所有session应实现空闲或不活动超时。此超时定义了session在会话中没有活动的情况下保持活动的时间量，在由给定session id的Web应用程序接收到的最后一个HTTP请求之后的定义的空闲时段关闭并使会话无效。</p>
+<p>空闲超时限制攻击者去猜测并从另一用户使用有效的session id的机会。但是，如果攻击者能够劫持定的会话，空闲超时不限制攻击者的行为，因为他可以生成会话活动定期保持会话活跃的时间更长</p>
+<p>session 超时管理和到期必须执行服务器端。如果客户端被用于执行session 超时，例如使用session token或其他客户机参数来跟踪时间的引用（因为登录时间的分钟数例如），攻击者可以操纵这些延长session持续时间。</p>
+<p>Absolute Timeout(绝对超时)</p>
+<p>所有session应实现绝对超时，无论session时候处于活动状态。这个超时定义的时间的session可以是主动的，关闭和由于给定的会话最初由Web应用程序创建时所定义的绝对周期的会话失效的最大金额。在session失效后，用户被强制（重新）在Web应用程序再次进行验证，并建立新的session。</p>
+<p>这种做法限制了攻击者使用被劫持的session的时间。</p>
+<p>Renewal Timeout(更新超时)</p>
+<p>另外，Web应用程序可以实现额外的更新超时，之后session id自动更新，在用户会话的中间，并且独立于session活动，因此也就是空闲超时。</p>
+<p>在session初始创建后的特定时间量之后，Web应用程序可以重新生成用户新的session id，并尝试在客户端上设置或更新它。在客户端知道新的session id并开始使用之前，上一个会话ID值将仍然有效一段时间，以适应安全间隔。那时候，当客户端切换到当前session内的新sessoin id时，应用程序应使之前的session id无效。</p>
+<p>此方案尽可能减少攻击者可能获得的给定session id值的时间量，即使受害者用户会话仍处于活动状态，也可以重新使用劫持用户session。用户session在合法客户端上保持活动并打开，尽管在每次更新超时到期时，会话持续时间周期性地更新其关联的session id值。因此，更新超时补充了空闲和绝对超时，特别是当绝对超时值随时间显着延长（例如，长时间保持用户会话的应用程序需求）时。</p>
+<p>根据不同的实施，有可能是其中一个仍然有效，以前的session id的攻击者发送的受害用户之前的请求，之后更新超时刚刚到期，首先获得了更新的session id值的竞争条件。至少在这种情况下，作为他的session将被终止突然因为她的相关session id不再有效的受害用户可能知道的攻击。</p>
+<h4 id="Manual-Session-Expiration-手动会话超时"><a href="#Manual-Session-Expiration-手动会话超时" class="headerlink" title="Manual Session Expiration(手动会话超时)"></a>Manual Session Expiration(手动会话超时)</h4><p>Web应用程序应该提供机制，允许一旦他们使用Web应用程序完成安全意识的用户主动关闭他们的session。</p>
+<p>Logout Button(退出按钮)</p>
+<p>Web应用程序必须提供一个可见的可访问的注销（注销，退出或关闭会话）按钮，可在Web应用程序头或菜单上使用，并可从每个Web应用程序资源和页面访问，以便用户可以手动关闭会话任何时候。如上所述，web应用必须至少在服务器端使该会话无效。</p>
+<h4 id="Web-Content-Caching-网页内容缓存"><a href="#Web-Content-Caching-网页内容缓存" class="headerlink" title="Web Content Caching(网页内容缓存)"></a>Web Content Caching(网页内容缓存)</h4><p>即使在会话关闭之后，也可能通过Web浏览器缓存来访问会话内交换的私有或敏感数据。因此，Web应用程序必须对通过HTTP和HTTPS交换的所有Web流量使用限制性缓存指令，例如“Cache-Control：no-cache，no-store”和“Pragma：no-cache”HTTP headers [5]和/或所有或（至少）敏感网页上的等效META标签。</p>
+<p>独立于Web应用程序定义的缓存策略，如果允许缓存Web应用程序内容，则不能高速缓存会话ID，因此强烈建议使用“Cache-Control：no-cache =”Set-Cookie，Set -Cookie2“”指令，允许Web客户端缓存除会话ID以外的所有内容。</p>
+<h3 id="客户端增强防御"><a href="#客户端增强防御" class="headerlink" title="客户端增强防御"></a>客户端增强防御</h3><p>Web应用程序可以补充以前描述的会话管理防御与客户端的其他对策。客户端保护（通常以JavaScript检查和验证的形式）不具有防弹性，并且可以很容易地被熟练的攻击者击败，但可以引入必须被入侵者绕过的另一层防御。</p>
+<h4 id="初始化登录时间"><a href="#初始化登录时间" class="headerlink" title="初始化登录时间"></a>初始化登录时间</h4><p>Web应用程序可以在登录页面中使用JavaScript代码来评估和测量自页面加载以来的时间量和授予了session id。如果在特定时间内尝试登录尝试，则客户端代码可以通知用户登录的最长时间已经通过并重新加载登录页面，因此检索新的session id。</p>
+<p>这种额外的保护机制尝试强制session ud预认证的更新，避免了以前使用（或手动设置）session ID由下一个受害者使用同一台计算机重复使用的场景，例如会话固化攻击。</p>
+<h4 id="web浏览器窗口关闭时强制退出"><a href="#web浏览器窗口关闭时强制退出" class="headerlink" title="web浏览器窗口关闭时强制退出"></a>web浏览器窗口关闭时强制退出</h4><p>Web应用程序可以使用JavaScript代码捕获所有Web浏览器选项卡或窗口关闭（或甚至返回）事件，并采取适当的措施在关闭Web浏览器之前关闭当前session，并模拟用户已通过注销手动关闭会话按钮。</p>
+<h4 id="禁用web浏览器的Cross-Tab-Sessions"><a href="#禁用web浏览器的Cross-Tab-Sessions" class="headerlink" title="禁用web浏览器的Cross-Tab Sessions"></a>禁用web浏览器的Cross-Tab Sessions</h4><p>一旦用户登录并且建立会话，Web应用程序可以使用JavaScript代码，以迫使用户在针对同一Web应用程序打开新的Web浏览器选项卡或窗口时重新验证。 Web应用程序不希望允许多个Web浏览器选项卡或窗口共享相同的会话。因此，应用程序会尝试强制Web浏览器不会在它们之间同时共享相同的session id。</p>
+<h4 id="自动客户端注销"><a href="#自动客户端注销" class="headerlink" title="自动客户端注销"></a>自动客户端注销</h4><p>所有（或关键）页面中的Web应用程序都可以使用JavaScript代码，以便在空闲超时到期后自动注销客户端会话，例如，将用户重定向到注销页面（与之前提及的注销按钮相同的资源）。</p>
+<p>使用客户端代码增强服务器端空闲超时功能的好处是用户可以看到会话由于不活动而结束，甚至可以提前通知会话将通过倒计时计时器过期和警告消息。这种用户友好的方法有助于避免由于服务器端默认过期会话而需要大量输入数据的网页中的工作丢失。</p>
+<h3 id="Session攻击检测"><a href="#Session攻击检测" class="headerlink" title="Session攻击检测"></a>Session攻击检测</h3><h4 id="session-id-猜测-强力-检测"><a href="#session-id-猜测-强力-检测" class="headerlink" title="session id 猜测/强力 检测"></a>session id 猜测/强力 检测</h4><p>如果攻击者试图猜测或强制强制有效的session id，则他需要使用来自单个（或一组）IP地址的不同session id，针对目标Web应用程序启动多个顺序请求。此外，如果攻击者试图分析session id的可预测性（例如使用统计分析），则他需要针对目标Web应用程序从单个（或一组）IP地址启动多个顺序请求，以收集新的有效session ID。</p>
+<p>Web应用程序必须能够根据尝试收集（或使用）不同的session id，警告和/或阻止违规IP地址的次数来检测这两种情况。</p>
+<h4 id="检测session-id的异常"><a href="#检测session-id的异常" class="headerlink" title="检测session id的异常"></a>检测session id的异常</h4><p>Web应用程序应该专注于检测与session ID相关联的异常，例如其操作。 OWASP AppSensor项目[7]提供了一个框架和方法来实现内部入侵检测功能，在Web应用程序中以检测点和响应动作的形式集中在异常和意外行为的检测中。有时，业务逻辑细节和高级智能有时只能从Web应用程序内部获得，在那里可以建立多个会话相关的检测点，例如当现有的cookie被修改或删除时，新的cookie ，则来自另一用户的session ID被重用，或者当用户位置或用户代理在会话中间更改时。</p>
+<h4 id="将session-id绑定到其他用户的属性上"><a href="#将session-id绑定到其他用户的属性上" class="headerlink" title="将session id绑定到其他用户的属性上"></a>将session id绑定到其他用户的属性上</h4><p>为了检测（并且在某些情况下，防止）用户不当行为和session 劫持，强烈建议将session ID绑定到其他用户或客户端属性，如客户端IP地址，用户代理或客户端的数字证书。如果Web应用程序在已建立的session中间检测到这些不同属性之间的任何变化或异常，这是session处理和劫持尝试的非常好的指示符，并且这个简单的事实可用于警告和/或终止可疑session。</p>
+<p>虽然这些属性不能被Web应用程序用于信任地防御会话攻击，但它们显着增加了Web应用程序检测（和保护）功能。然而，熟练的攻击者可以通过共享相同的网络（在NAT环境，如Wi-Fi热点中很常见）或通过使用相同的出站Web代理（通常使用相同的出站Web代理）来重用分配给受害者用户的相同IP地址来绕过这些控件企业环境），或者通过手动修改他的用户代理来查看受害者用户的身份。</p>
+<h4 id="记录session生命周期：监视session-id的创建，使用和销毁"><a href="#记录session生命周期：监视session-id的创建，使用和销毁" class="headerlink" title="记录session生命周期：监视session id的创建，使用和销毁"></a>记录session生命周期：监视session id的创建，使用和销毁</h4><p>Web应用程序应通过包括有关会话完整生命周期的信息来增加其日志功能。特别地，建议记录session相关事件，例如session ID的创建，更新和销毁以及在登录和注销操作中的使用细节，session内的特权级别更改，超时到期，无效session活动（检测时）和session期间的关键业务操作。</p>
+<p>日志详细信息可能包括请求的时间戳，源IP地址，Web目标资源（并涉及到会话操作），HTTP头（包括User-Agent和Referer），GET和POST参数，错误代码和消息，用户名（或用户ID），加上会话ID（cookie，URL，GET，POST …）。敏感数据（如session ID）不应包含在日志中，以便保护会话日志免受session ID本地或远程泄露或未经授权的访问。但是，必须记录某种类型的特定于会话的信息才能将日志条目与特定session相关联。建议记录会话ID的salted-hash，而不是session ID本身，以便允许会话特定的日志关联，而不会暴露session ID。</p>
+<p>特别是，Web应用程序必须彻底保护管理接口，从而管理所有当前的活动会话。通常，支持人员通常以用户的身份模拟用户和查看Web应用程序来解决会话相关的问题，甚至是一般问题。</p>
+<p>session日志成为主要的Web应用入侵检测数据源之一，当检测到（一个或多个）攻击时，也可以使用入侵保护系统自动终止会话和/或禁用用户帐户。如果实施主动保护，也必须记录这些防御措施。</p>
+<h4 id="同步会话的登录"><a href="#同步会话的登录" class="headerlink" title="同步会话的登录"></a>同步会话的登录</h4><p>Web应用程序设计决定是否允许来自同一用户的多个同时登录从相同或不同的客户端IP地址被允许。如果Web应用程序不想允许同时进行会话登录，则必须在每个新的身份验证事件之后采取有效的操作，隐式终止以前可用的会话，或者要求用户（通过旧的，新的或两个会话）关于必须的会话保持活跃。</p>
+<p>建议Web应用程序添加允许随时检查活动会话详细信息的用户功能，监视并提醒用户有关并发登录的信息，提供用户功能以手动远程终止会话，并通过记录跟踪帐户活动记录（日志）多个客户端详细信息，如IP地址，用户代理，登录日期和时间，空闲时间等。</p>
+<h3 id="WAF保护"><a href="#WAF保护" class="headerlink" title="WAF保护"></a>WAF保护</h3><p>在某些情况下，Web应用程序源代码不可用或无法修改，或者实现上述详细安全建议和最佳做法所需的更改，这意味着对Web应用程序架构进行需要进行全面重新设计，在短时期内实现是很困难的。在这些情况下，补充Web应用程序防御，并且为了尽可能保持Web应用程序的安全性。建议使用外部保护，如Web应用程序防火墙（WAF），可以减轻已描述的session管理威胁。</p>
+<p>Web应用程序防火墙提供针对基于session的攻击的检测和保护功能。一方面，WAF对Cookie执行Secure属性的使用是非常简单的，例如“Secure”和“HttpOnly”标志，在所有Web应用程序响应的“Set-Cookie”头上应用基本重写规则设置一个新的cookie。另一方面，可以实现更高级的功能，以允许WAF跟踪会话和相应的session ，并对session固定应用所有类型的保护（通过在特权更改时在客户端更新session id被检测），执行粘性会话（通过验证session id和其他客户端属性（如IP地址或用户代理）之间的关系）或管理session到期（强制客户端和Web应用程序完成会话） 。</p>
+<p>开源的ModSecurity WAF以及OWASP核心规则集[6]提供了检测和应用安全性Cookie属性的能力，针对会话固定攻击的对策以及会话跟踪功能来执行粘性会话。</p>
+
+  </div>
+  <!--评论块-->
+    
+
+</article>
+<nav class="post-nav">
+  <!-- Prev Nav -->
+    
+
+
+  <!-- Next Nav -->
+    
+  <a href="/2017/08/31/写在前面/" id="post_nav-older" class="post-nav-content next-content">
+      旧篇
+  </a>
+    
+</nav>
+<div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
+<div class="post-toc-none"><p>(无)</p></div>
+<div class="post-toc-box">
+    <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#web认证、session管理和访问控制"><span class="post-toc-number">1.</span> <span class="post-toc-text">web认证、session管理和访问控制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Session-id-属性"><span class="post-toc-number">2.</span> <span class="post-toc-text">Session id 属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Session-ID-Name-Fingerprinting"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Session ID Name Fingerprinting</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Session-ID-Length"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Session ID Length</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Session-ID-Entropy"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">Session ID Entropy</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Session-ID-Content-or-value"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">Session ID Content(or value)</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#会话管理的实现"><span class="post-toc-number">3.</span> <span class="post-toc-text">会话管理的实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#内置session管理实现"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">内置session管理实现</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#使用与接受-session-id交换机制"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">使用与接受 session id交换机制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#传输层安全"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">传输层安全</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Cookie"><span class="post-toc-number">4.</span> <span class="post-toc-text">Cookie</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Secure-Attribute-安全属性"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">Secure Attribute(安全属性)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#HttpOnly-Attribute-HttpOnly-属性"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">HttpOnly Attribute(HttpOnly 属性)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#SameSite-Attribute-SameSite-属性"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">SameSite Attribute(SameSite 属性)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Domain-and-Path-Attributes-域和路径-属性"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">Domain and Path Attributes(域和路径 属性)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#到期和最大时间-属性"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">到期和最大时间 属性</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Session-Id-生命周期"><span class="post-toc-number">5.</span> <span class="post-toc-text">Session Id 生命周期</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Session-id-的生成和验证：permissive-and-strict-session-管理"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">Session id 的生成和验证：permissive and strict session 管理</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#管理session-id作为其他用户的输入"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">管理session id作为其他用户的输入</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#在任何权限级别更改后，更新session-id"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">在任何权限级别更改后，更新session id</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Considerations-When-Using-Multiple-Cookies-考虑使用多个cookies"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">Considerations When Using Multiple Cookies(考虑使用多个cookies)</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#会话到期"><span class="post-toc-number">6.</span> <span class="post-toc-text">会话到期</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#自动session过期"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">自动session过期</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Manual-Session-Expiration-手动会话超时"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">Manual Session Expiration(手动会话超时)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Web-Content-Caching-网页内容缓存"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">Web Content Caching(网页内容缓存)</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#客户端增强防御"><span class="post-toc-number">7.</span> <span class="post-toc-text">客户端增强防御</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#初始化登录时间"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">初始化登录时间</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#web浏览器窗口关闭时强制退出"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">web浏览器窗口关闭时强制退出</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#禁用web浏览器的Cross-Tab-Sessions"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">禁用web浏览器的Cross-Tab Sessions</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#自动客户端注销"><span class="post-toc-number">7.4.</span> <span class="post-toc-text">自动客户端注销</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Session攻击检测"><span class="post-toc-number">8.</span> <span class="post-toc-text">Session攻击检测</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#session-id-猜测-强力-检测"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">session id 猜测/强力 检测</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#检测session-id的异常"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">检测session id的异常</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#将session-id绑定到其他用户的属性上"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">将session id绑定到其他用户的属性上</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#记录session生命周期：监视session-id的创建，使用和销毁"><span class="post-toc-number">8.4.</span> <span class="post-toc-text">记录session生命周期：监视session id的创建，使用和销毁</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#同步会话的登录"><span class="post-toc-number">8.5.</span> <span class="post-toc-text">同步会话的登录</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#WAF保护"><span class="post-toc-number">9.</span> <span class="post-toc-text">WAF保护</span></a></li></ol>
+</div>
+<!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
+<script type="text/javascript">
+    menu();
+</script>
+  </div>
+</div>
+<div id="bottom-outer">
+  <div id="bottom-inner">
+    <a  id="top-button" onfocus="this.blur();"><div class="up upinbody" style="background-color:#26A69A"><i class="material-icons material-up">vertical_align_top</i></div></a>
+
+
+<p style="line-height: 45px">Copyright ©  2017  David Blog</p>
+<p style="line-height: 45px">Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> && Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a></p>
+
+  </div>
+</div>
+
+<!--影集界面需要的资源-->
+
+
+
+<!-- scripts list from theme config.yml -->
+
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+<script src="/js/materialize.min.js"></script>
+
+<script src="/js/main.min.js"></script>
+
+
+<script>
+    NProgress.start();
+    NProgress.done();
+    lazy();
+    links();
+    window.onpopstate = menu();
+    //pjax操作
+    $(document).pjax('a:not(.nopjax)', '#content-inner', {fragment:'#content-inner', timeout:8000});
+    $(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done)
+        .on('pjax:end', () => {
+            dowmdiv();
+            lazy();
+            toc();
+            links();
+            menu();
+        });
+</script>
+
+</body>
+</html>
