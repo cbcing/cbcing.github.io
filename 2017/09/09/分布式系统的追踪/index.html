@@ -169,11 +169,11 @@
 </ul>
 <p>Zipkin是Twitter公司开源的分布式跟踪系统，它的理论模型来自于Google的Dapper论文。还有其他的分布式跟踪系统，比如Apache的HTrace，阿里的鹰眼Tracing、京东的Hydra、新浪的Watchman等。</p>
 <p>zipkin通过采集跟踪数据可以帮助开发者深入了解在分布式系统中某一个特定的请求时如何执行的。那么Zipkin是如何做到的？看看官方的架构图：</p>
-<p><img src="../../../cbc/zipkin_1.png" alt="zipkin architecture"></p>
+<p><img src="../cbc/zipkin_1.png" alt="zipkin architecture"></p>
 <p>将数据发送到zipkin的以检测应用程序中的组件称为Reporter，它通过Transport组件将跟踪的数据传到zipkin收集器，然后存储在存储器上面，稍后，存储由API查询以向UI提供数据，你就可以在web上面看到服务的跟踪以图形化的形式表现在你的面前。</p>
 <p>Transport有三种方式：HTTP/Kafka/Scribe，Stroage默认存储在内存中，如果想做到数据持久化，可以讲数据存储到外部的数据库中。</p>
 <p>那么zipkin是如何做到请求的跟踪呢？</p>
-<p>这里又一个很重要的概念Span。span直译过来是”跨度”，在谷歌的Dapper论文中表示跟踪树中树节点引用的数据结构体，span是跟踪系统中的基本数据单元（微服务架构中：通俗的理解为一个服务），Dapper的论文中，并没有具体介绍span中的全部细节，但在Zipkin中，每个span中一般包含如下字段：</p>
+<p>这里又一个很重要的概念Span。span直译过来是”跨度”，在谷歌的Dapper论文中表示跟踪树中树节点引用的数据结构体，span是跟踪系统中的基本数据单元（微服务架构中：通俗的理解为一次请求），Dapper的论文中，并没有具体介绍span中的全部细节，但在Zipkin中，每个span中一般包含如下字段：</p>
 <ul>
 <li>traceId</li>
 <li>spanId</li>
