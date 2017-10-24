@@ -142,18 +142,17 @@
   <div id="content-inner">
     
 <article id="post">
-  <div class="post-page-title" style="background-color:#26A69A;background-image:url(/images/cbc/one.png)" >
-  <h2>写给自己</h2>
+  <div class="post-page-title" style="background-color:#26A69A;background-image:url(/images/cbc/six.png)" >
+  <h2>X-Forward-For获取真实IP地址</h2>
     
-  <p>作者:David Chen &nbsp&nbsp 发布于:<time datetime="2017-08-31T12:50:44.000Z">
-          2017-08-31
+  <p>作者:David Chen &nbsp&nbsp 发布于:<time datetime="2017-10-24T06:12:23.000Z">
+          2017-10-24
     </time>
   </p>
     
   </div>
   <div class="post-page-content">
-  <p>仰望星空，脚踏实地；</p>
-<p>不忘初心，方得始终；</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getClientIpAddr</span><span class="params">(HttpServletRequest request)</span> </span>&#123;</div><div class="line">  String ip = request.getHeader(<span class="string">"X-Forwarded-For"</span>);</div><div class="line">  <span class="keyword">if</span> (ip == <span class="keyword">null</span> || ip.length() == <span class="number">0</span> || ip.equalsIgnoreCase(<span class="string">"unknown"</span>)) &#123;</div><div class="line">    ip = request.getHeader(<span class="string">"Proxy-Client-IP"</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (ip == <span class="keyword">null</span> || ip.length() == <span class="number">0</span> || ip.equalsIgnoreCase(<span class="string">"unknown"</span>)) &#123;</div><div class="line">    ip = request.getHeader(<span class="string">"WL-Proxy-Client-IP"</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (ip == <span class="keyword">null</span> || ip.length() == <span class="number">0</span> || ip.equalsIgnoreCase(<span class="string">"unknown"</span>)) &#123;</div><div class="line">    ip = request.getHeader(<span class="string">"HTTP_X_FORWARDED_FOR"</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (ip == <span class="keyword">null</span> || ip.length() == <span class="number">0</span> || ip.equalsIgnoreCase(<span class="string">"unknown"</span>)) &#123;</div><div class="line">    ip = request.getHeader(<span class="string">"HTTP_X_FORWARDED"</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (ip == <span class="keyword">null</span> || ip.length() == <span class="number">0</span> || ip.equalsIgnoreCase(<span class="string">"unknown"</span>)) &#123;</div><div class="line">    ip = request.getHeader(<span class="string">"HTTP_X_CLUSTER_CLIENT_IP"</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (ip == <span class="keyword">null</span> || ip.length() == <span class="number">0</span> || ip.equalsIgnoreCase(<span class="string">"unknown"</span>)) &#123;</div><div class="line">    ip = request.getHeader(<span class="string">"HTTP_CLIENT_IP"</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (ip == <span class="keyword">null</span> || ip.length() == <span class="number">0</span> || ip.equalsIgnoreCase(<span class="string">"unknown"</span>)) &#123;</div><div class="line">    ip = request.getHeader(<span class="string">"HTTP_FORWARDED_FOR"</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (ip == <span class="keyword">null</span> || ip.length() == <span class="number">0</span> || ip.equalsIgnoreCase(<span class="string">"unknown"</span>)) &#123;</div><div class="line">    ip = request.getHeader(<span class="string">"HTTP_FORWARDED"</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (ip == <span class="keyword">null</span> || ip.length() == <span class="number">0</span> || ip.equalsIgnoreCase(<span class="string">"unknown"</span>)) &#123;</div><div class="line">    ip = request.getHeader(<span class="string">"HTTP_VIA"</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (ip == <span class="keyword">null</span> || ip.length() == <span class="number">0</span> || ip.equalsIgnoreCase(<span class="string">"unknown"</span>)) &#123;</div><div class="line">    ip = request.getHeader(<span class="string">"REMOTE_ADDR"</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (ip == <span class="keyword">null</span> || ip.length() == <span class="number">0</span> || ip.equalsIgnoreCase(<span class="string">"unknown"</span>)) &#123;</div><div class="line">    ip = request.getRemoteAddr();</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> ip.equals(<span class="string">"0:0:0:0:0:0:0:1"</span>) ? <span class="string">"127.0.0.1"</span> : ip;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
   </div>
   <!--评论块-->
@@ -163,13 +162,13 @@
 <nav class="post-nav">
   <!-- Prev Nav -->
     
-  <a href="/2017/09/09/从安全的角度考虑Session/" id="post_nav-newer" class="post-nav-content prev-content">
-      新篇
-  </a>
-    
 
 
   <!-- Next Nav -->
+    
+  <a href="/2017/10/11/数据的可视化与superset/" id="post_nav-older" class="post-nav-content next-content">
+      旧篇
+  </a>
     
 </nav>
 <div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
