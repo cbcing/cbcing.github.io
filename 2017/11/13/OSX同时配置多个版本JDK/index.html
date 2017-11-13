@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  
+  <meta name="keywords" content="网站关键字">
+  <meta name="description" content="网站简介">
+  
+  <title>分享与进步</title>
+  
+    <!-- stylesheets list from config.yml -->
+    
+      <link rel="stylesheet" href="/css/materialize.min.css">
+    
+      <link rel="stylesheet" href="/css/main.min.css">
+    
+  
+  <style type="text/css">
+      html{
+          font-family: sans-serif;
+          font-weight: 300;
+      }
+      @font-face {
+          font-family: 'Material Icons';
+          font-style: normal;
+          font-weight: 400;
+          src: url(/fonts/MaterialIcons-Regular.eot);
+          src: url(/fonts/MaterialIcons-Regular.woff2) format('woff2'),
+          url(/fonts/MaterialIcons-Regular.woff) format('woff'),
+          url(/fonts/MaterialIcons-Regular.ttf) format('truetype')
+      }
+  </style>
+</head>
+<body>
+<div id="menu-box"><a href="javascript:void(0)" id="menu" data-activates="slide-out" class="button-collapse menu" ><span class="nav-btn"></span></a></div>
+<div id="menu-outer">
+  <div id="menu-inner">
+      <ul id="slide-out" class="side-nav" >
+    <div class="nav-header"  style="background-image: url(/images/header-bg.png);background-color:#26A69A">
+    <div class="header-box"><img src="/images/header.png" ondragstart="return false;"></div>
+    <p>David Chen</p>
+    <div class="nav-link">
+        
+        <a href="https://twitter.com/DavidDivading" target="_blank"> <div class="link-box twitter"></div></a>
+        
+        
+        <a  href="http://github.com/cbcing" target="_blank"><div class="link-box github"></div></a>
+        
+        
+        <a href="mailto:davvvvvvidchen@gmail.com"><div class="link-box email"></div></a>
+        
+        
+        <a href="https://weibo.com/3543577592/profile" target="_blank"><div class="link-box weibo"></div></a>
+        
+        
+        <a href="http://example.com" target="_blank"> <div class="link-box zhihu"></div></a>
+        
+    </div>
+    <div class="nav-search">
+        <form id="search-form"> <!-- 搜索框相关 -->
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="搜索..." class="search form-control" autocomplete="off" autocorrect="off"/>
+            <div class="nav-search-img"><i class="material-icons">search</i></div>
+        </form>
+        <div id="local-search-result"></div> <!-- 搜索结果区 -->
+        <p class='no-result'>无搜索结果</p>
+    </div>
+</div>
+    <!--Homepage-->
+
+<li class="nav-list">
+    <a href="/" target="_self">
+        <div class="nav-ico"><i class="material-icons">home</i> </div><p>主页</p>
+    </a>
+</li>
+
+<!--archives-->
+
+<li class="nav-list dropdown-btn">
+    <a  class=""  target="_self">
+        <div class="nav-ico"><i class="material-icons">assignment</i></div><p>归档</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
+    </a>
+</li>
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="archive-link" href="/archives/2017/11/">十一月 2017<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/10/">十月 2017<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/09/">九月 2017<span class="archive-count">3</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/08/">八月 2017<span class="archive-count">1</span></a>
+    </li>
+</ul>
+<!--categories-->
+
+<li class="nav-list dropdown-btn">
+    <a   class=""  target="_self">
+        <div class="nav-ico"><i class="material-icons">dashboard</i></div><p>分类</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
+    </a>
+</li>
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="category-link" href="/categories/技术/">技术<span class="category-count">3</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/比心/">比心<span class="category-count">1</span></a>
+    </li>
+</ul>
+<!--tags-->
+
+<li class="nav-list">
+    <a href="/archives" target="_self">
+        <div class="nav-ico"><i class="material-icons">bookmark</i> </div><p>标签</p>
+    </a>
+</li>
+
+<!--photo-->
+
+<li class="nav-list">
+    <a href="/photo" class="nopjax" target="_self">
+        <div class="nav-ico"><i class="material-icons">insert_photo</i> </div><p>影集</p>
+    </a>
+</li>
+
+<!--friends-->
+
+<li class="nav-list">
+    <a href="/friends" target="_self">
+        <div class="nav-ico"><i class="material-icons">face</i> </div><p>友链</p>
+    </a>
+</li>
+
+<!--about-->
+
+<li class="nav-list">
+    <a href="/about" target="_self">
+        <div class="nav-ico"><i class="material-icons">copyright</i> </div><p>关于</p>
+    </a>
+</li>
+
+
+</ul>
+
+  </div>
+</div>
+
+<div id="content-outer">
+  <div id="content-inner">
+    
+<article id="post">
+  <div class="post-page-title" style="background-color:#26A69A;background-image:url(/images/cbc/seven.png)" >
+  <h2>OSX同时配置多个版本JDK</h2>
+    
+  <p>作者:David Chen &nbsp&nbsp 发布于:<time datetime="2017-11-13T12:43:24.000Z">
+          2017-11-13
+    </time>
+  </p>
+    
+  </div>
+  <div class="post-page-content">
+  <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>之前一直使用的是JDK1.8，学习的时候是，第一份实习工作也是。当然，JDK1.8也是目前使用最为广泛的版本。现在应为换了一家公司，也许是因为公司规模较大，技术体系已经成形，不会轻易了改变公司的技术体系，所以现在的公司开发使用的是JDK1.7（至少我现在所做的项目要求是1.7）。最近，Java9也发布了，对应的JDK版本为JDK9，不在称之为JDK1.9，据说JDK9里面增加了对于容器方面的支持，但是至今还没有去好好学习Java9。</p>
+<p>所以，为了工作以及学习的需求，现在需要在个人的MAC上同时安装Java7/8/9三个版本，具体操作如下：</p>
+<h3 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h3><h4 id="第一步：准备资源"><a href="#第一步：准备资源" class="headerlink" title="第一步：准备资源"></a>第一步：准备资源</h4><p>首先在oracle的官方网站下下载好7/8/9三个版本的dmg文件。</p>
+<p><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="external">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a></p>
+<h4 id="第二步：开始安装"><a href="#第二步：开始安装" class="headerlink" title="第二步：开始安装"></a>第二步：开始安装</h4><p>分别点击三个dmg文件，然后一直next就是了。</p>
+<p>Mac下的Java会默认装在 <strong>/Library/Java/JavaVirtualMachines</strong> 这个路径下面。</p>
+<p>我的该目录下的三个Java版本分别是：    jdk-9.0.1.jdk</p>
+<p>​                                jdk1.7.0<em>79.jdk</em></p>
+<p>​                                jdk1.8.0_101.jdk</p>
+<h4 id="第三步：设置JAVA-HOME"><a href="#第三步：设置JAVA-HOME" class="headerlink" title="第三步：设置JAVA_HOME"></a>第三步：设置JAVA_HOME</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cd</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vim .bashrc</div></pre></td></tr></table></figure>
+<p>然后在里面输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">export JAVA_7_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home</div><div class="line">export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home</div><div class="line">export JAVA_9_HOME=/Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home</div><div class="line">export JAVA_HOME=$JAVA_8_HOME</div><div class="line">alias java7=&apos;export JAVA_HOME=$JAVA_7_HOME&apos;</div><div class="line">alias java8=&apos;export JAVA_HOME=$JAVA_8_HOME&apos;</div><div class="line">alias java9=&apos;export JAVA_HOME=$JAVA_9_HOME&apos;</div></pre></td></tr></table></figure>
+<p>需要注意的是：<strong>JDK的版本，版本不同，路径不同</strong></p>
+<p>然后：保存退出</p>
+<p>最后让文件生效：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ source .bashrc</div></pre></td></tr></table></figure>
+<h4 id="第四步：检查结果"><a href="#第四步：检查结果" class="headerlink" title="第四步：检查结果"></a>第四步：检查结果</h4><p>打开终端：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ java -version</div></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">java version &quot;1.8.0_101&quot;</div><div class="line">Java(TM) SE Runtime Environment (build 1.8.0_101-b13)</div><div class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.101-b13, mixed mode)</div></pre></td></tr></table></figure>
+<p>切换java7</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ java7</div></pre></td></tr></table></figure>
+<p>切换java9</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ java9</div></pre></td></tr></table></figure>
+<p><strong>大功告成</strong></p>
+<h3 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h3><p>不同的项目，不同的学习需求，可能会使用不同的Java版本。在学习和工作的时候自由切换，简直美滋滋。</p>
+<p>ps：其实这都是很简单的操作，记录自己的学习与生活，锻炼自己的文笔，是一件很快乐的事情，进步与分享！</p>
+
+  </div>
+  <!--评论块-->
+    
+
+</article>
+<nav class="post-nav">
+  <!-- Prev Nav -->
+    
+
+
+  <!-- Next Nav -->
+    
+  <a href="/2017/10/24/X-Forward-For获取真实IP地址/" id="post_nav-older" class="post-nav-content next-content">
+      旧篇
+  </a>
+    
+</nav>
+<div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
+<div class="post-toc-none"><p>(无)</p></div>
+<div class="post-toc-box">
+    <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#写在前面"><span class="post-toc-number">1.</span> <span class="post-toc-text">写在前面</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#具体步骤"><span class="post-toc-number">2.</span> <span class="post-toc-text">具体步骤</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第一步：准备资源"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">第一步：准备资源</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第二步：开始安装"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">第二步：开始安装</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第三步：设置JAVA-HOME"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">第三步：设置JAVA_HOME</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第四步：检查结果"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">第四步：检查结果</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#写在最后"><span class="post-toc-number">3.</span> <span class="post-toc-text">写在最后</span></a></li></ol>
+</div>
+<!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
+<script type="text/javascript">
+    menu();
+</script>
+  </div>
+</div>
+<div id="bottom-outer">
+  <div id="bottom-inner">
+    <a  id="top-button" onfocus="this.blur();"><div class="up upinbody" style="background-color:#26A69A"><i class="material-icons material-up">vertical_align_top</i></div></a>
+
+
+<p style="line-height: 45px">Copyright ©  2017  分享与进步</p>
+<p style="line-height: 45px">Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> && Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a></p>
+
+  </div>
+</div>
+
+<!--影集界面需要的资源-->
+
+
+
+<!-- scripts list from theme config.yml -->
+
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+<script src="/js/materialize.min.js"></script>
+
+<script src="/js/main.min.js"></script>
+
+
+<script>
+    NProgress.start();
+    NProgress.done();
+    lazy();
+    links();
+    window.onpopstate = menu();
+    //pjax操作
+    $(document).pjax('a:not(.nopjax)', '#content-inner', {fragment:'#content-inner', timeout:8000});
+    $(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done)
+        .on('pjax:end', () => {
+            dowmdiv();
+            lazy();
+            toc();
+            links();
+            menu();
+        });
+</script>
+
+</body>
+</html>
