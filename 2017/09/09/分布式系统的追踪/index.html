@@ -84,7 +84,7 @@
 
 <ul class="dropdown-menu dropdown" >
     <li class="nav-dropdown-list">
-        <a class="archive-link" href="/archives/2018/01/">一月 2018<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/11/">十一月 2017<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/10/">十月 2017<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/09/">九月 2017<span class="archive-count">3</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/08/">八月 2017<span class="archive-count">1</span></a>
+        <a class="archive-link" href="/archives/2018/04/">四月 2018<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/11/">十一月 2017<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/10/">十月 2017<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/09/">九月 2017<span class="archive-count">3</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/08/">八月 2017<span class="archive-count">1</span></a>
     </li>
 </ul>
 <!--categories-->
@@ -152,7 +152,7 @@
     
   </div>
   <div class="post-page-content">
-  <h3 id="为什么需要进行分布式系统的追踪"><a href="#为什么需要进行分布式系统的追踪" class="headerlink" title="为什么需要进行分布式系统的追踪"></a>为什么需要进行分布式系统的追踪</h3><p>现在互联网公司为了支撑日益增长的业务，会把服务进行整合、拆分，用复杂的，大规模分布式的集群来实现，使我们的服务不仅能通过集群部署抵挡流量的冲击，又能根据业务在其上进行灵活的扩展。尤其是是随着微服务架构和容器技术的兴起（加速企业敏捷，快速适应业务变化，满足架构的高可用和高扩展），互联网应用往往构建在不同的服务之上，这些服务，有可能是由不同的团队开发、可能使用不同的编程语言来实现、有可能布在了几千台服务器，横跨多个不同的数据中心。一个请求至少经过三四个服务，多则经过几十个甚至是上百个服务的调用，即使是开发者都很说明白（或者根本说不明白）一个请求所需要经过的服务或者说一个服务的调用链路（如果去翻庞大的代码，那将会是一件很痛苦的事情）。所以，如何动态展示服务的链路？如何分析服务链路的瓶颈并对其进行调优？如何快速进行服务链路的故障发现？这就是分布式系统追踪所存在的意义。</p>
+  <h3 id="为什么需要进行分布式系统的追踪"><a href="#为什么需要进行分布式系统的追踪" class="headerlink" title="为什么需要进行分布式系统的追踪"></a>为什么需要进行分布式系统的追踪</h3><p>现在互联网公司为了支撑日益增长的业务，会把服务进行整合、拆分，用复杂的，大规模分布式的集群来实现，使我们的服务不仅能通过集群部署抵挡流量的冲击，又能根据业务在其上进行灵活的扩展。尤其是是随着微服务架构和容器技术的兴起（x加速企业敏捷，快速适应业务变化，满足架构的高可用和高扩展），互联网应用往往构建在不同的服务之上，这些服务，有可能是由不同的团队开发、可能使用不同的编程语言来实现、有可能布在了几千台服务器，横跨多个不同的数据中心。一个请求至少经过三四个服务，多则经过几十个甚至是上百个服务的调用，即使是开发者都很说明白（或者根本说不明白）一个请求所需要经过的服务或者说一个服务的调用链路（如果去翻庞大的代码，那将会是一件很痛苦的事情）。所以，如何动态展示服务的链路？如何分析服务链路的瓶颈并对其进行调优？如何快速进行服务链路的故障发现？这就是分布式系统追踪所存在的意义。</p>
 <h3 id="Google关于分布式系统追踪的论文-——-Dapper"><a href="#Google关于分布式系统追踪的论文-——-Dapper" class="headerlink" title="Google关于分布式系统追踪的论文 —— Dapper"></a>Google关于分布式系统追踪的论文 —— Dapper</h3><p>2010年谷歌发表了其内部使用的分布式跟踪系统的论文 —— Dapper，讲述了Dapper在谷歌内部两年的演变和设计以及运维经验。</p>
 <p>其实最为重要的有三点：</p>
 <ul>
